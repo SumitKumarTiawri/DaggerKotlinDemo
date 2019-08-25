@@ -35,6 +35,7 @@ class BaseApplication : Application(), HasActivityInjector, HasSupportFragmentIn
         super.onCreate()
         val component = DaggerApplicationComponent.builder().application(this).build()
         component.inject(this)
+        //
 
 
     }
