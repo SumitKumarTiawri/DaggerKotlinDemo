@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.coderlab.cricketkotlindemo">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:name=".BaseApplication"
         android:allowBackup="true"
@@ -13,6 +15,11 @@
 
 
         <activity android:name=".screens.mainscreen.view.MainActivity">
+
+        </activity>
+
+
+        <activity android:name=".paging.PagingActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

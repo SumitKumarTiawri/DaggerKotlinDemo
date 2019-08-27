@@ -6,11 +6,10 @@ import dagger.android.ContributesAndroidInjector
 
 @Module
 abstract class FragmentBuilderModule {
+
+
     @FragmentScope
     @ContributesAndroidInjector(modules = [FragmentModule::class])
     abstract fun bindMainScreenFragment(): MainScreenFragment
-
-
-
 
 }

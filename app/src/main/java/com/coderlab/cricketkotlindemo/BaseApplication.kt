@@ -11,6 +11,7 @@ import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasActivityInjector
 import dagger.android.HasServiceInjector
+import dagger.android.support.DaggerFragment
 import dagger.android.support.HasSupportFragmentInjector
 import javax.inject.Inject
 
