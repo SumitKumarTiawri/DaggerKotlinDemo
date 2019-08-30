@@ -9,6 +9,7 @@ import android.widget.TextView
 import androidx.core.provider.FontRequest
 import androidx.core.provider.FontsContractCompat
 import com.coderlab.cricketkotlindemo.R
+import java.util.concurrent.CompletableFuture
 
 fun loadFont(context: Context, font: CustomFont, func: (Typeface) -> Unit) {
     val handlerThread = HandlerThread("fonts").apply { start() }
@@ -19,7 +20,6 @@ fun loadFont(context: Context, font: CustomFont, func: (Typeface) -> Unit) {
         font.query,
         R.array.com_google_android_gms_fonts_certs
     )
-
     FontsContractCompat.requestFont(
         context,
         request,
@@ -27,20 +27,21 @@ fun loadFont(context: Context, font: CustomFont, func: (Typeface) -> Unit) {
             override fun onTypefaceRetrieved(typeface: Typeface) {
                 func.invoke(typeface)
             }
-
             override fun onTypefaceRequestFailed(reason: Int) {
                 Log.e(
                     "loadFont",
                     "FontsContractCompat . requestFont failed with error code $reason"
                 )
+                func.invoke(Typeface.DEFAULT)
             }
         },
         handler
     )
+
 }
 
 enum class CustomFont(val query: String) {
-    MONTSERRAT_REGULAR("Montserrat"),
+    MONTSERRAT_REGULAR("montserrat"),
     MONTSERRAT_LIGHT("name=Montserrat&weight=300"),
     MONTSERRAT_SEMI_BOLD("name=Montserrat&weight=600"),
 }

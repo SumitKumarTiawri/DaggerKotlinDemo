@@ -45,8 +45,11 @@ dependencies {
     kapt 'com.google.dagger:dagger-compiler:2.20'
     kapt 'com.google.dagger:dagger-android-processor:2.20'
 
-    implementation 'com.squareup.retrofit2:retrofit:2.5.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
+    implementation 'com.squareup.retrofit2:retrofit:2.6.1'
+    implementation 'com.squareup.retrofit2:converter-gson:2.6.1'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.6.1'
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.12'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
 
     implementation 'androidx.paging:paging-runtime:2.1.0'
     implementation 'com.github.bumptech.glide:glide:4.9.0'

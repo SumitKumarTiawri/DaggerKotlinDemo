@@ -17,8 +17,7 @@ class ItemDataSource : PageKeyedDataSource<Int, Item>() {
         params: PageKeyedDataSource.LoadInitialParams<Int>,
         callback: PageKeyedDataSource.LoadInitialCallback<Int, Item>
     ) {
-        RetrofitClient.instance
-            .api.getAnswers(FIRST_PAGE, PAGE_SIZE, SITE_NAME)
+        RetrofitClient.instance.api.getAnswers(FIRST_PAGE, PAGE_SIZE, SITE_NAME)
             .enqueue(object : Callback<StackApiResponse> {
                 override fun onResponse(
                     call: Call<StackApiResponse>,

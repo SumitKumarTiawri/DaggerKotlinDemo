@@ -22,7 +22,6 @@ class PagingActivity : AppCompatActivity() {
         val recyclerView: RecyclerView = findViewById(R.id.recyclerview)
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.setHasFixedSize(true)
-
         //getting our ItemViewModel
         val itemViewModel = ViewModelProvider(this, object :
             ViewModelProvider.NewInstanceFactory() {

@@ -35,16 +35,6 @@ class ItemAdapter internal constructor(private val mCtx: Context) :
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         val item = getItem(position)
         holder.binding.item = item
-//        if (item != null) {
-//            holder.textView.setText(item.owner?.display_name)
-//            Glide.with(mCtx)
-//                .load(item.owner?.profile_image)
-//                .into(holder.imageView)
-//        } else {
-//            Toast.makeText(mCtx, "Item is null", Toast.LENGTH_LONG).show()
-//        }
-
-
     }
 
     inner class ItemViewHolder(val binding: ItemPagingListBinding) :
