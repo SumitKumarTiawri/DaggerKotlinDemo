@@ -12,6 +12,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.coderlab.cricketkotlindemo.R
+import com.coderlab.cricketkotlindemo.orientation.ActivityA
 import com.coderlab.cricketkotlindemo.realtimesearch.adapter.SearchAdapter
 import com.coderlab.cricketkotlindemo.realtimesearch.model.SearchItem
 import com.coderlab.cricketkotlindemo.realtimesearch.viewmodel.RealtimeViewModel
@@ -49,12 +50,12 @@ class RealTimeSearchActivity : AppCompatActivity() {
                 id: Long
             ) {
                 Log.e("onItemClick", adapter.getItem(position).toString())
+                autoCompleteTextView.setText("")
             }
         }
 
         autoCompleteTextView.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-
             }
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
@@ -62,11 +63,10 @@ class RealTimeSearchActivity : AppCompatActivity() {
             }
 
             override fun afterTextChanged(s: Editable?) {
-
             }
-
         })
 
+        ActivityA.startActivityA(this, "Holla")
 
     }
 }

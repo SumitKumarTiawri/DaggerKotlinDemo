@@ -19,7 +19,6 @@ import kotlinx.android.synthetic.main.activity_main.*
 import javax.inject.Inject
 
 class MainActivity : AppCompatActivity(), HasSupportFragmentInjector {
-
     @Inject
     lateinit var fragmentInjector: DispatchingAndroidInjector<Fragment>
     @Inject
@@ -28,8 +27,11 @@ class MainActivity : AppCompatActivity(), HasSupportFragmentInjector {
     lateinit var viewModel: MainScreenViewModel
 
     override fun supportFragmentInjector(): AndroidInjector<Fragment> = fragmentInjector
+
+
     @Inject
     lateinit var userData: UserData
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         AndroidInjection.inject(this)
@@ -40,14 +42,14 @@ class MainActivity : AppCompatActivity(), HasSupportFragmentInjector {
                 Log.e("viewModel", " MainActivity > $t")
             }
         })
-        viewModel.addSomeValue("Add activity value")
 
+        viewModel.addSomeValue("Add activity value")
         setContentView(R.layout.activity_main)
         Log.e("dagger", " UserData > $userData > value ${userData.username}")
-
         hello_text.setOnClickListener {
             supportFragmentManager.beginTransaction()
                 .replace(R.id.main_screen_container, MainScreenFragment(), "MainScreenFragment")
+                .addToBackStack("MainScreenFragment")
                 .commitAllowingStateLoss()
         }
 

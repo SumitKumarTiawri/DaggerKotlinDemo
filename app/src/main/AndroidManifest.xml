@@ -16,7 +16,9 @@
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
 
 
-        <activity android:name=".screens.mainscreen.view.MainActivity">
+        <activity
+            android:name=".screens.mainscreen.view.MainActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize">
 
         </activity>
 
@@ -25,9 +27,16 @@
 
         </activity>
         <activity android:name=".realtimesearch.RealTimeSearchActivity">
+
+        </activity>
+        <activity
+            android:name=".orientation.ActivityA"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <activity
+            android:name=".fragmentrd.FragmentParentActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

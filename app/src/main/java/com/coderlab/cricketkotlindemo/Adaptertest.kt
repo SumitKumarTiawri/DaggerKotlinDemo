@@ -8,4 +8,6 @@ class Adaptertest @Inject constructor() {
     fun print() {
         Log.e("print", toString())
     }
+
+
 }
