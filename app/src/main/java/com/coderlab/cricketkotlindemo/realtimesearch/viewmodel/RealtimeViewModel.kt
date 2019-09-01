@@ -41,6 +41,10 @@ class RealtimeViewModel : ViewModel() {
         text?.let { subject.onNext(it) }
     }
 
+    fun stopAllTask() {
+        compositeDisposable.clear()
+    }
+
     override fun onCleared() {
         compositeDisposable.clear()
         super.onCleared()
