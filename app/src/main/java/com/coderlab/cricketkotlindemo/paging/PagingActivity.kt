@@ -15,14 +15,18 @@ import com.coderlab.cricketkotlindemo.paging.viewmodel.ItemViewModel
 
 
 class PagingActivity : AppCompatActivity() {
+//    https://code.luasoftware.com/tutorials/android/android-data-binding-for-recyclerview-with-livedata/
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_paging)
+
         //setting up recyclerview
         val recyclerView: RecyclerView = findViewById(R.id.recyclerview)
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.setHasFixedSize(true)
         //getting our ItemViewModel
+
+
         val itemViewModel = ViewModelProvider(this, object :
             ViewModelProvider.NewInstanceFactory() {
             override fun <T : ViewModel?> create(modelClass: Class<T>): T {
@@ -33,19 +37,17 @@ class PagingActivity : AppCompatActivity() {
 
         //creating the Adapter
         val adapter = ItemAdapter(this)
-
-
         //observing the itemPagedList from view model
-        itemViewModel.itemPagedList.observe(this, object : Observer<PagedList<Item>> {
-            override fun onChanged(items: PagedList<Item>?) {
-
+        itemViewModel.itemPagedList.observe(this,
+            Observer<PagedList<Item>> { items ->
                 //in case of any changes
                 //submitting the items to adapter
                 adapter.submitList(items)
-            }
-        })
-
+            })
         //setting the adapter
         recyclerView.setAdapter(adapter)
     }
+
+
+
 }

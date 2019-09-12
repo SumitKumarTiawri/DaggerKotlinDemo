@@ -3,14 +3,12 @@ package com.coderlab.cricketkotlindemo.paging.adapter
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.databinding.DataBindingComponent
 import androidx.databinding.DataBindingUtil
 import androidx.paging.PagedListAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.coderlab.cricketkotlindemo.R
 import com.coderlab.cricketkotlindemo.databinding.ItemPagingListBinding
-import com.coderlab.cricketkotlindemo.paging.bindingadapter.PagingBindingAdapter
 import com.coderlab.cricketkotlindemo.paging.model.Item
 
 
@@ -21,13 +19,7 @@ class ItemAdapter internal constructor(private val mCtx: Context) :
         val binding = DataBindingUtil.inflate<ItemPagingListBinding>(
             LayoutInflater.from(mCtx),
             R.layout.item_paging_list,
-            parent,
-            false, object : DataBindingComponent {
-                override fun getPagingBindingAdapter(): PagingBindingAdapter {
-                    return PagingBindingAdapter()
-                }
-
-            }
+            parent, false
         )
         return ItemViewHolder(binding)
     }

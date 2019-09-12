@@ -9,8 +9,8 @@ import dagger.Provides
 @Module
 class PreferenceModule {
 
-//    @Provides
-//    @ApplicationScope
-//    fun provideStorage(@ApplicationContext context: Context) = Storage(context)
+    @Provides
+    @ApplicationScope
+    fun provideStorage(@ApplicationContext context: Context) = Storage(context)
 
 }

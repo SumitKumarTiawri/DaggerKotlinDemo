@@ -9,7 +9,7 @@ import retrofit2.Callback
 import retrofit2.Response
 
 
-class ItemDataSource : PageKeyedDataSource<Int, Item>() {
+class ItemDataSource(): PageKeyedDataSource<Int, Item>() {
 
 
     //this will be called once to load the initial data
@@ -36,8 +36,8 @@ class ItemDataSource : PageKeyedDataSource<Int, Item>() {
 
     //this will load the previous page
     override fun loadBefore(
-        params: PageKeyedDataSource.LoadParams<Int>,
-        callback: PageKeyedDataSource.LoadCallback<Int, Item>
+        params: LoadParams<Int>,
+        callback: LoadCallback<Int, Item>
     ) {
         RetrofitClient.instance
             .api.getAnswers(params.key, PAGE_SIZE, SITE_NAME)
@@ -67,8 +67,8 @@ class ItemDataSource : PageKeyedDataSource<Int, Item>() {
 
     //this will load the next page
     override fun loadAfter(
-        params: PageKeyedDataSource.LoadParams<Int>,
-        callback: PageKeyedDataSource.LoadCallback<Int, Item>
+        params: LoadParams<Int>,
+        callback: LoadCallback<Int, Item>
     ) {
         RetrofitClient.instance
             .api

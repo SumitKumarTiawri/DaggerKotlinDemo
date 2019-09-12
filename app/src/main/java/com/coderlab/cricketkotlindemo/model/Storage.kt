@@ -8,7 +8,7 @@ import javax.inject.Singleton
 
 
 @Singleton
-class Storage @Inject constructor(@ApplicationContext val context:Context){
+class Storage @Inject constructor(@ApplicationContext val context: Context) {
 
     val sharedPreference: SharedPreferences =
         context.getSharedPreferences("app_global", Context.MODE_PRIVATE)

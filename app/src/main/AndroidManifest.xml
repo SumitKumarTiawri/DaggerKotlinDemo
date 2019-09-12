@@ -35,6 +35,9 @@
         <activity
             android:name=".fragmentrd.FragmentParentActivity"
             android:configChanges="orientation|keyboardHidden|screenSize">
+
+        </activity>
+        <activity android:name=".datasharing.DataSharingActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

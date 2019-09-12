@@ -36,6 +36,7 @@ class MainActivity : AppCompatActivity(), HasSupportFragmentInjector {
     override fun onCreate(savedInstanceState: Bundle?) {
         AndroidInjection.inject(this)
         super.onCreate(savedInstanceState)
+
         viewModel = ViewModelProvider(this, viewModelFactory).get(MainScreenViewModel::class.java)
         viewModel.listOfItems.observe(this, object : Observer<String> {
             override fun onChanged(t: String?) {
@@ -44,7 +45,8 @@ class MainActivity : AppCompatActivity(), HasSupportFragmentInjector {
         })
 
         viewModel.addSomeValue("Add activity value")
-        setContentView(R.layout.activity_main)
+
+
         Log.e("dagger", " UserData > $userData > value ${userData.username}")
         hello_text.setOnClickListener {
             supportFragmentManager.beginTransaction()

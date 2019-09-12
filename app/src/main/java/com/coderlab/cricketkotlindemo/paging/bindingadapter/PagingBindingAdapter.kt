@@ -5,8 +5,9 @@ import android.widget.ImageView
 import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
 
-class PagingBindingAdapter {
+object PagingBindingAdapter {
     @BindingAdapter("app:sumit_url")
+    @JvmStatic
     fun setImageFromUrl(imageView: ImageView, url: String?) {
         url.let {
             Glide.with(imageView)
