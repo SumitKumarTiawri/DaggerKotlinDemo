@@ -15,7 +15,7 @@ import com.coderlab.cricketkotlindemo.paging.viewmodel.ItemViewModel
 
 
 class PagingActivity : AppCompatActivity() {
-//    https://code.luasoftware.com/tutorials/android/android-data-binding-for-recyclerview-with-livedata/
+    //    https://code.luasoftware.com/tutorials/android/android-data-binding-for-recyclerview-with-livedata/
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_paging)
@@ -47,7 +47,6 @@ class PagingActivity : AppCompatActivity() {
         //setting the adapter
         recyclerView.setAdapter(adapter)
     }
-
 
 
 }
