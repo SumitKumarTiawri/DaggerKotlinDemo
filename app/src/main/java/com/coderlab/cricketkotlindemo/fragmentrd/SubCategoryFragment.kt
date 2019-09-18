@@ -24,8 +24,8 @@ class SubCategoryFragment : BaseFragment() {
         super.onViewCreated(view, savedInstanceState)
         view.category_button.setOnClickListener {
             // if you don't want this fragment in backstack
-//            activity?.supportFragmentManager?.beginTransaction()?.remove(this)?.commitNow()
-//            activity?.supportFragmentManager?.popBackStack();
+            activity?.supportFragmentManager?.beginTransaction()?.remove(this)?.commitNow()
+            activity?.supportFragmentManager?.popBackStackImmediate()
             activity?.supportFragmentManager
                 ?.beginTransaction()
                 ?.add(R.id.container, ProductListFragment.newInstance("From Sub Category"), "ProductListFragment")

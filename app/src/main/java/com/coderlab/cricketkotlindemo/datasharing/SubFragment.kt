@@ -31,7 +31,7 @@ class SubFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel.getData().observe(this, object : Observer<String> {
+        viewModel.getData().observe(viewLifecycleOwner, object : Observer<String> {
             override fun onChanged(t: String?) {
                 shared_data.text = t
             }
